@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New todo</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a 
+        href="#" 
+        class="list-group-item clearfix" 
+        *ngFor="let todo of todos">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ todo.name }}</h4>
+                <p class="list-group-item-text"> {{ todo.date }} </p>
+                <p class="list-group-item-text"> {{ todo.state }} </p>
+            </div>
+            <div class="pull-right">
+                <span class="badge badge-primary">TODO</span>
+            </div>
+        </a>
+        <app-todo></app-todo>
+    </div>
+    
+</div>

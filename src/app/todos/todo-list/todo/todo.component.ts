@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-
+  isEdited = false;
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleEdit() {
+    this.isEdited = !this.isEdited;
+    console.log(this.isEdited)
   }
 
 }
