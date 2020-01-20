@@ -13,10 +13,12 @@
             <div class="pull-left">
                 <h4 class="list-group-item-heading">{{ todo.name }}</h4>
                 <p class="list-group-item-text"> {{ todo.date }} </p>
-                <p class="list-group-item-text"> {{ todo.state }} </p>
             </div>
             <div class="pull-right">
-                <span class="badge badge-primary">TODO</span>
+                <span *ngIf="todo.state === 'TODO'" class="badge badge-warning">{{ todo.state }}</span>
+                <span *ngIf="todo.state ===  'DONE' " class="badge badge-success">{{ todo.state }}</span>
+                <span *ngIf="todo.state === 'IN PROGRESS' " class="badge badge-primary">{{ todo.state }}</span>
+                <span *ngIf="todo.state === 'CANCELED' " class="badge badge-danger">{{ todo.state }}</span>
             </div>
         </a>
         <app-todo></app-todo>
