@@ -1,64 +1,16 @@
-.app-todo-action-button {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: -0.5rem;
-    margin-top: 0.5rem;
-  }
-  
-  .app-todo-action-button button {
-    padding: 0 0.5rem;
-  }
-  
-  .todo-card {
-    background: #fff;
-    border: none;
-    padding: 1rem;
-    width: 238px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
-  }
-  
-  .todo-card {
-    margin-bottom: 1rem;
-    margin: 1rem;
-  }
-  
-  .todo-card .state-wrapper{
-    font-weight: 400;
-    margin-top: 0rem;
+
+  .badge-primary{
+    background-color: rgba(0, 0, 255, 0.726);
   }
 
-  .todo-card .date-wrapper {
-    background-color: white;
-    padding: 0.5rem 1rem;
-    color: rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.56px;
-    margin: -1rem;
-    font-size: 12px;
-    text-align: left;
-    margin-top: 0rem;
-    margin-bottom: -0.5rem;
-    border-bottom-left-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+  .badge-success{
+    background-color: rgba(0, 128, 0, 0.726) ;
   }
-  
-  .todo-card .name-wrapper {
-    margin: 0rem 0 0; 
-    margin-bottom: 1rem;
-    font-size: 20px;
-    font-weight: 500;
+
+  .badge-warning{
+    background-color: rgba(255, 166, 0, 0.726) ;
   }
-  
-  .description-wrapper {
-    font-weight: 400;
-    margin-top: 0rem;
-  }
-  
-  .app-input-todo-wrapper {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+
+  .badge-danger{
+    background-color: rgba(255, 0, 0, 0.726);
   }

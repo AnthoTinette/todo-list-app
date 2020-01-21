@@ -11,6 +11,8 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { TodoDetailsComponent } from './todos/todo-details/todo-details.component';
 import { TodoEditComponent } from './todos/todo-list/todo-edit/todo-edit.component';
 import { TodoComponent } from './todos/todo-list/todo/todo.component';
+import { FormsModule } from '@angular/forms';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { TodoComponent } from './todos/todo-list/todo/todo.component';
     TodoListComponent,
     TodoDetailsComponent,
     TodoEditComponent,
-    TodoComponent
+    TodoComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

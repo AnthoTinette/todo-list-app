@@ -1,1 +1,54 @@
-<p>todo-edit works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="taskName">Name</label>
+                    <input 
+                        type="text" 
+                        id="taskName"
+                        class="form-control"
+                        name="taskName"
+                        ngModel
+                        required
+                        >                
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="taskDescription">Description</label>
+                    <input 
+                        type="text" 
+                        id="taskDescription"
+                        class="form-control"
+                        name="taskDescription"
+                        ngModel
+                        required
+                        >                
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="taskState">Status</label>
+                    <input 
+                        type="checkbox"
+                        id="taskState"
+                        class="form-control"
+                        name="taskState"
+                        ngModel
+                        >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button 
+                    class="btn btn-success" 
+                    type="submit" 
+                    [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add' }}</button>
+                    <button 
+                    class="btn btn-danger" 
+                    type="button" 
+                    (click)="onDelete()"
+                    *ngIf="editMode">Delete</button>
+                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

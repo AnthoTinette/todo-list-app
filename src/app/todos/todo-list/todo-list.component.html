@@ -1,27 +1,57 @@
 <div class="row">
     <div class="col-xs-12">
-        <button class="btn btn-success">New todo</button>
+        <app-todo-edit></app-todo-edit>
+    </div>
+</div>
+<hr *ngIf="isNewTodo == true">
+<div class="row" *ngIf="isNewTodo == true">
+    <div class="col-xs-12">
+        <form>
+           <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="taskName">Task name</label>
+                    <input type="text" 
+                    id="taskName"
+                    class="form-control"
+                    #taskNameInput>
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="taskState">Task state</label>
+                    <select class="browser-default dropdown-primary" #taskStateInput>
+                        <option selected>Open this select menu</option>
+                        <option value="1">TODO</option>
+                        <option value="2">IN PROGRESS</option>
+                        <option value="3">DONE</option>
+                        <option value="3">CANCELED</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="taskName">Description</label>
+                    <input type="text" 
+                    id="taskName"
+                    class="form-control"
+                    #taskDescriptionInput>
+                </div>
+                <div class="col-sm-5 form-group">
+                    <button class="btn btn-success" (click)="onAddTodo()">Add</button>
+                    <button class="btn btn-success" (click)="onTodoCreation()">Cancel</button>
+                </div>
+           </div> 
+        </form>
     </div>
 </div>
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a 
-        href="#" 
-        class="list-group-item clearfix" 
-        *ngFor="let todo of todos">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ todo.name }}</h4>
-                <p class="list-group-item-text"> {{ todo.date }} </p>
-            </div>
-            <div class="pull-right">
-                <span *ngIf="todo.state === 'TODO'" class="badge badge-warning">{{ todo.state }}</span>
-                <span *ngIf="todo.state ===  'DONE' " class="badge badge-success">{{ todo.state }}</span>
-                <span *ngIf="todo.state === 'IN PROGRESS' " class="badge badge-primary">{{ todo.state }}</span>
-                <span *ngIf="todo.state === 'CANCELED' " class="badge badge-danger">{{ todo.state }}</span>
-            </div>
-        </a>
-        <app-todo></app-todo>
+        <app-todo 
+        *ngFor="let todoEl of todos; let i = index"
+        [todo]="todoEl"
+        (click)="onEditItem(i)"></app-todo>
     </div>
-    
 </div>
+<hr>
+<!-- <div class="row">
+    <div class="col-xs-10">
+        <app-todo-edit (todoAdded)="onTodoAdded($event)"></app-todo-edit>
+    </div>
+</div> -->

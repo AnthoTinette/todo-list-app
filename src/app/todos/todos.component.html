@@ -3,6 +3,11 @@
         <app-todo-list></app-todo-list>
     </div>
     <div class="col-md-4">
-        <app-todo-details></app-todo-details>
+        <app-todo-details 
+        *ngIf="selectedTodo; else infoText"
+        [todo]="selectedTodo"></app-todo-details>
+        <ng-template #infoText>
+            <h2>Please select a task</h2>
+        </ng-template>
     </div>
 </div>

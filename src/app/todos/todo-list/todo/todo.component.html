@@ -11,3 +11,22 @@
       </ng-container>
     </div>
 </div> -->
+
+<a 
+href="#" 
+class="list-group-item clearfix"
+(click)="onSelected()">
+    <div class="pull-left">
+      <div class="row">
+        <div class="col-xs-12">
+          <h4 class="list-group-item-heading">{{ todo.name }}</h4>
+        </div>
+      </div>
+              
+        <!-- <p class="list-group-item-text"> {{ todo.date }} </p> -->
+    </div>
+    <div class="pull-right">
+        <span *ngIf="todo.state === true" class="badge badge-success">DONE</span>
+        <span *ngIf="todo.state ===  false" class="badge badge-danger">TBD</span>
+    </div>
+</a>
