@@ -9,9 +9,14 @@
 <div class="row" *ngIf="isEditMode === false">
     <div class="col-xs-12">
         <label>Description : </label>
-        {{ todo.description }}
+        <span *ngIf="todo.description; else descNotEmpty">{{ todo.description }}</span>
+        <ng-template #descNotEmpty>
+            <p>No description.</p>
+        </ng-template>
     </div>
     <div class="col-xs-12">
         <label>State :</label>
+        <span *ngIf="todo.state === true" class="badge badge-success">DONE</span>
+        <span *ngIf="todo.state ===  false" class="badge badge-danger">TBD</span>
     </div>
 </div>

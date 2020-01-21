@@ -10,24 +10,12 @@ import { TodoService } from '../../todo.service';
 export class TodoComponent implements OnInit {
   @Input() todo: Todo;
  
-  // isEdited = false; 
-  
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
   }
 
-  // toggleEdit() {
-  //   this.isEdited = !this.isEdited;
-  //   console.log(this.isEdited)
-  // }
-
   onSelected() {
     this.todoService.todoSelected.emit(this.todo);
   }
-
-  // onStateChange() {
-  //   this.todoService.updateTodos.emit(this.todo);
-  // }
-
 }

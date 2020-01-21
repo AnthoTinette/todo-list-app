@@ -13,7 +13,7 @@ export class TodoService {
         new Todo('Reply to Juste Leblanc', 'I have to reply to Juste Leblanc in order to prepare our next hollidays !', false),
         new Todo('Go for a walk with John Doe', 'Walk in the forest with John Doe. Note to myself : do no present him my wife...', false),
         new Todo('Meet Batman', 'Try to meet batman. It will be hard !', true)
-      ];
+    ];
 
     getTodos() {
         return this.todos;
@@ -25,7 +25,7 @@ export class TodoService {
 
     addTodos(todo : Todo) {
         // todo.date = 
-        this.todos.push(todo);
+        this.todos.unshift(todo);
     }
 
     updateTodo(index: number, newTodo: Todo) {
