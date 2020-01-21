@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { Todo } from '../../todo.model';
+import { TodoService } from '../../todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -6,16 +8,26 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  isEdited = false;
+  @Input() todo: Todo;
+ 
+  // isEdited = false; 
   
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
   }
 
-  toggleEdit() {
-    this.isEdited = !this.isEdited;
-    console.log(this.isEdited)
+  // toggleEdit() {
+  //   this.isEdited = !this.isEdited;
+  //   console.log(this.isEdited)
+  // }
+
+  onSelected() {
+    this.todoService.todoSelected.emit(this.todo);
   }
+
+  // onStateChange() {
+  //   this.todoService.updateTodos.emit(this.todo);
+  // }
 
 }
